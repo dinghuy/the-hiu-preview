@@ -1,0 +1,720 @@
+<!doctype html>
+<html lang="en" data-type="place">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="page-type" content="place">
+  <meta name="site-kind" content="place">
+  <meta name="page-kind" content="place">
+  <title>The Hiu | Whole-Villa Retreat (Vũng Tàu) — Preview Prototype</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Internal Preview Disclaimer Banner (Compliance with AGENTS.md) -->
+  <aside class="preview-banner" role="status" aria-label="Internal Preview Notice">
+    <span>Internal Mockup / Preview Only</span> Working Design Preview · Property Selection & Booking Terms Pending Formal Approval · No Live Payments
+  </aside>
+
+  <!-- Sticky Top Navigation -->
+  <header class="site-header">
+    <div class="scroll-progress" id="scroll-progress"></div>
+    <div class="container nav-wrapper">
+      <a class="brand-mark" href="#top" aria-label="The Hiu Homepage">
+        the hiu<span>.</span>
+      </a>
+
+      <!-- Active Section Breadcrumb Pill (Mobile & Tablet <1024px) -->
+      <div class="mobile-act-pill header-act-pill" id="mobile-act-indicator" aria-live="polite">
+        <span class="act-pill-dot" aria-hidden="true"></span>
+        <span class="act-pill-text" id="mobile-act-text">01 / Arrive</span>
+      </div>
+
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <a class="nav-link" href="#space">The Space</a>
+        <a class="nav-link" href="#rooms">Bedrooms</a>
+        <a class="nav-link" href="#pricing">Transparent Pricing</a>
+        <a class="nav-link" href="#process">How to Book</a>
+      </nav>
+
+      <div class="nav-cta-group">
+        <a class="btn btn-outline btn-sm" href="#pricing">Check Rates</a>
+        <a class="btn btn-whatsapp btn-sm" href="https://wa.me/84900000000?text=Hello%20The%20Hiu,%20I'm%20interested%20in%20inquiry%20details%20for%20the%20villa." target="_blank" rel="noopener">
+          WhatsApp Us
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- Desktop Floating Left Navigation Rail (>=1024px) -->
+    <nav class="side-nav-rail" id="side-nav-rail" aria-label="Chapter Navigation">
+      <div class="side-nav-track">
+        <a href="#arrive" class="side-nav-item is-active" data-section="arrive" aria-label="Chapter 01: Arrive" aria-current="true">
+          <span class="side-nav-line" aria-hidden="true"></span>
+          <span class="side-nav-num">01</span>
+          <span class="side-nav-label">Arrive</span>
+        </a>
+        <a href="#space" class="side-nav-item" data-section="space" aria-label="Chapter 02: Space">
+          <span class="side-nav-line" aria-hidden="true"></span>
+          <span class="side-nav-num">02</span>
+          <span class="side-nav-label">Space</span>
+        </a>
+        <a href="#rooms" class="side-nav-item" data-section="rooms" aria-label="Chapter 03: Suites">
+          <span class="side-nav-line" aria-hidden="true"></span>
+          <span class="side-nav-num">03</span>
+          <span class="side-nav-label">Suites</span>
+        </a>
+        <a href="#pricing" class="side-nav-item" data-section="pricing" aria-label="Chapter 04: Rates">
+          <span class="side-nav-line" aria-hidden="true"></span>
+          <span class="side-nav-num">04</span>
+          <span class="side-nav-label">Rates</span>
+        </a>
+        <a href="#enquiry" class="side-nav-item" data-section="enquiry" aria-label="Chapter 05: Reserve">
+          <span class="side-nav-line" aria-hidden="true"></span>
+          <span class="side-nav-num">05</span>
+          <span class="side-nav-label">Reserve</span>
+        </a>
+      </div>
+    </nav>
+
+    <!-- ======================================================================
+         ACT 1: ARRIVE — Dimensional Layered Hero
+         ====================================================================== -->
+    <section class="hero-section" id="arrive" aria-label="Villa Introduction">
+      <div class="container hero-grid">
+        
+        <div class="hero-copy-block">
+          <span class="eyebrow">Vũng Tàu Private Coastal Stay</span>
+          <h1 class="hero-headline">Take your time.<br><em>Stay a while.</em></h1>
+          <p class="hero-desc">
+            A three-bedroom private villa for family reunions, group holidays, and focused coastal workations. Complete privacy, 5 minutes walk to Front Beach.
+          </p>
+
+          <!-- Starting Price Strip (Early Transparent Pricing) -->
+          <div class="hero-price-strip">
+            <div>
+              <span class="price-main">From $350</span>
+              <span class="price-sub">/ night · Whole Villa</span>
+            </div>
+            <div class="hero-price-meta">
+              <span class="badge-pill">Up to 8–10 Guests</span>
+            </div>
+          </div>
+
+          <!-- Dual Primary CTAs -->
+          <div class="hero-cta-actions">
+            <a class="btn btn-whatsapp" id="hero-whatsapp-btn" href="https://wa.me/84900000000?text=Hello%20The%20Hiu,%20I%20am%20interested%20in%20staying%20at%20the%20villa.%20Could%20you%20share%20availability?" target="_blank" rel="noopener">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.072-2.129-.523-1.637-.678-2.696-2.345-2.777-2.454-.082-.109-.661-.88-.661-1.678 0-.797.414-1.189.561-1.352.147-.163.32-.204.427-.204.108 0 .216.002.311.007.1.006.234-.038.366.279.135.326.46 1.123.5 1.205.04.082.067.177.013.285-.054.108-.081.176-.162.272-.081.095-.171.213-.245.286-.081.082-.167.171-.072.335.095.163.422.696.906 1.127.623.555 1.149.728 1.312.809.163.082.259.071.354-.04.095-.112.408-.475.517-.638.109-.163.218-.136.368-.082.15.054.954.449 1.118.531.163.082.272.122.312.19.04.068.04.394-.104.799z"/></svg>
+              Chat on WhatsApp
+            </a>
+            <a class="btn btn-outline" href="#pricing">
+              Check Dates & Rates ↓
+            </a>
+          </div>
+
+          <button type="button" class="hero-ota-link" id="open-ota-modal-btn">
+            Prefer Airbnb or Booking.com? View options ↗
+          </button>
+        </div>
+
+        <!-- Dimensional Visual Canvas (Scroll-Craft Layering) -->
+        <div class="hero-visual-canvas" aria-hidden="true">
+          <div class="hero-layer-base">
+            <img src="assets/garden.jpg" alt="Villa private courtyard and garden">
+          </div>
+          <div class="hero-layer-frame">
+            <img src="assets/living.jpg" alt="Living pavilion detail">
+          </div>
+          <div class="hero-layer-badge">
+            <span class="label">Location</span>
+            <span class="val">Vũng Tàu Coastal</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         ACT 2: DISCOVER — Space & Flow
+         ====================================================================== -->
+    <section class="space-section" id="space" aria-label="The Villa Experience">
+      <div class="container">
+        <div class="reveal-on-scroll">
+          <span class="section-label">Living Flow</span>
+          <h2 class="section-title">Shared living when you want company.<br><em>Quiet rooms when you need focus.</em></h2>
+          <p class="section-subtitle">
+            Built around an open central living pavilion and plunge pool, the layout gives large groups room to gather for long meals or retreat for undisturbed rest.
+          </p>
+        </div>
+
+        <!-- Video Teaser Preview (HyperFrames Cinematic Production) -->
+        <div class="video-teaser-wrap reveal-on-scroll" id="teaser-video">
+          <div class="video-teaser-card">
+            <div class="video-media-frame">
+              <video class="villa-video-player" id="villa-video" poster="assets/pool.jpg" playsinline muted loop preload="metadata">
+                <source src="assets/the-hiu-teaser-web.mp4" type="video/mp4">
+                Your browser does not support HTML5 video.
+              </video>
+
+              <!-- Custom Quiet Glassmorphism Video Overlay Controls -->
+              <div class="video-controls-overlay" id="video-controls">
+                <button class="video-ctrl-btn" id="video-play-btn" aria-label="Play or pause video" type="button">
+                  <svg class="icon-play" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+                  <svg class="icon-pause" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true" style="display:none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                </button>
+                <div class="video-progress-bar-wrap" id="video-progress-wrap" role="progressbar" aria-label="Video playback progress" aria-valuemin="0" aria-valuemax="15" aria-valuenow="0">
+                  <div class="video-progress-fill" id="video-progress-fill"></div>
+                </div>
+                <span class="video-time-display" id="video-time-display">0:00 / 0:15</span>
+                <button class="video-ctrl-btn video-fs-btn" id="video-fs-btn" aria-label="Toggle fullscreen" type="button">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg>
+                </button>
+              </div>
+            </div>
+
+            <div class="video-teaser-meta">
+              <div class="video-teaser-info">
+                <strong>Cinematic Villa Walkthrough</strong>
+                <span>15s HyperFrames Motion Preview · Full 1080p</span>
+              </div>
+              <nav class="video-chapters" aria-label="Walkthrough chapters">
+                <button class="chapter-pill is-active" data-seek="0" type="button">
+                  <span class="chapter-dot"></span>01 / Plunge Pool
+                </button>
+                <button class="chapter-pill" data-seek="5" type="button">
+                  <span class="chapter-dot"></span>02 / Living Pavilion
+                </button>
+                <button class="chapter-pill" data-seek="10" type="button">
+                  <span class="chapter-dot"></span>03 / Master Suite
+                </button>
+              </nav>
+            </div>
+          </div>
+        </div>
+
+        <div class="space-grid">
+          <!-- Card 1 -->
+          <article class="space-card" data-stagger="1">
+            <div class="space-card-media" id="space-media-1">
+              <img src="assets/living.jpg" alt="Open living pavilion with pool connection" class="space-card-img" id="space-img-1">
+              <div class="space-angle-pills" role="tablist" aria-label="View angles for Gather & Unwind">
+                <button class="angle-pill is-active" data-target="space-img-1" data-src="assets/living.jpg" role="tab" aria-selected="true" type="button">Pavilion View</button>
+                <button class="angle-pill" data-target="space-img-1" data-src="assets/pool.jpg" role="tab" aria-selected="false" type="button">Pool Deck</button>
+              </div>
+            </div>
+            <div class="space-card-body">
+              <span class="space-card-num">01 / Gather & Unwind</span>
+              <h3 class="space-card-title">Family Days & Sunlit Evenings</h3>
+              <p class="space-card-desc">
+                An open-concept living pavilion opening straight out to the private plunge pool. Safe, enclosed, and serene with outdoor dining under covered eaves.
+              </p>
+              <ul class="space-highlights">
+                <li>Private plunge pool with shaded lounge</li>
+                <li>Full induction kitchen & 10-person dining table</li>
+                <li>Direct garden and pool deck patio</li>
+              </ul>
+              <div class="space-card-cta">
+                <a href="#enquiry" class="space-inquiry-link" data-purpose="Family holiday">Inquire for Family Stay <span aria-hidden="true">→</span></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="space-card" data-stagger="2">
+            <div class="space-card-media" id="space-media-2">
+              <img src="assets/dining.jpg" alt="Dedicated workspaces and communal dining" class="space-card-img" id="space-img-2">
+              <div class="space-angle-pills" role="tablist" aria-label="View angles for Stay & Focus">
+                <button class="angle-pill is-active" data-target="space-img-2" data-src="assets/dining.jpg" role="tab" aria-selected="true" type="button">Dining & Work</button>
+                <button class="angle-pill" data-target="space-img-2" data-src="assets/garden.jpg" role="tab" aria-selected="false" type="button">Garden Patio</button>
+              </div>
+            </div>
+            <div class="space-card-body">
+              <span class="space-card-num">02 / Stay & Focus</span>
+              <h3 class="space-card-title">Productive Coastal Workations</h3>
+              <p class="space-card-desc">
+                Quiet corners, solid ergonomic dining seating, and tested fiber Wi-Fi across every room. Built for teams and remote professionals balancing work blocks with sea air.
+              </p>
+              <ul class="space-highlights">
+                <li>High-speed mesh Wi-Fi tested across all rooms</li>
+                <li>Quiet workspaces with natural light</li>
+                <li>2 hours from Ho Chi Minh City via expressway</li>
+              </ul>
+              <div class="space-card-cta">
+                <a href="#enquiry" class="space-inquiry-link" data-purpose="Workation retreat">Inquire for Team Retreat <span aria-hidden="true">→</span></a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         ACT 3: PICTURE THE STAY — Where You'll Sleep & Floorplan
+         ====================================================================== -->
+    <section class="rooms-section" id="rooms" aria-label="Bedrooms and Floor Layout">
+      <div class="container">
+        <div class="reveal-on-scroll">
+          <span class="eyebrow">Accommodations</span>
+          <h2 class="section-title">Where you’ll sleep.<br><em>Quiet bedrooms.</em></h2>
+          <p class="section-subtitle">
+            Every bedroom features premium mattresses, crisp cotton linens, independent quiet inverter AC, and dedicated storage.
+          </p>
+        </div>
+
+        <div class="rooms-carousel-wrapper" id="rooms-carousel">
+          <div class="rooms-grid" id="rooms-grid" role="region" aria-label="Bedroom Suites Carousel" tabindex="0">
+            <!-- Room 1 -->
+            <article class="room-card sc-reveal">
+              <div class="room-media">
+                <img src="assets/bedroom-1.jpg" alt="Master King Suite bedroom">
+                <span class="room-badge">Level 2 · Primary</span>
+              </div>
+              <div class="room-details">
+                <span class="room-bed-type">1 King Bed · Ensuite Bath</span>
+                <h3 class="room-name">Suite 01 · Master Retreat</h3>
+                <ul class="room-features">
+                  <li>36m² private floor area</li>
+                  <li>Walk-in rainfall shower & deep soaking tub</li>
+                  <li>Private morning balcony overlooking garden</li>
+                </ul>
+              </div>
+            </article>
+
+            <!-- Room 2 -->
+            <article class="room-card sc-reveal" data-stagger="1">
+              <div class="room-media">
+                <img src="assets/bedroom-2.jpg" alt="Garden Queen Room">
+                <span class="room-badge">Level 1 · Garden View</span>
+              </div>
+              <div class="room-details">
+                <span class="room-bed-type">1 Queen Bed · Ensuite Bath</span>
+                <h3 class="room-name">Suite 02 · Poolside Queen</h3>
+                <ul class="room-features">
+                  <li>28m² ground level accessibility</li>
+                  <li>Direct step-out access to poolside</li>
+                  <li>Custom built-in wardrobe & work nook</li>
+                </ul>
+              </div>
+            </article>
+
+            <!-- Room 3 -->
+            <article class="room-card sc-reveal" data-stagger="2">
+              <div class="room-media">
+                <img src="assets/bedroom-3.jpg" alt="Family Twin Room">
+                <span class="room-badge">Level 2 · Versatile</span>
+              </div>
+              <div class="room-details">
+                <span class="room-bed-type">2 Twin Beds (Joinable)</span>
+                <h3 class="room-name">Suite 03 · Family Twin</h3>
+                <ul class="room-features">
+                  <li>24m² quiet rear orientation</li>
+                  <li>Dedicated bathroom adjacent</li>
+                  <li>Ideal for children, colleagues, or friends</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+
+          <!-- Carousel Controls (<992px) -->
+          <div class="carousel-nav-controls" id="rooms-carousel-controls" aria-label="Bedroom suites carousel controls">
+            <button type="button" class="carousel-arrow prev" id="rooms-prev-btn" aria-label="Previous suite" disabled>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <div class="carousel-dots" id="rooms-dots" role="tablist" aria-label="Suites selection">
+              <button type="button" class="carousel-dot is-active" data-slide="0" role="tab" aria-selected="true" aria-label="Suite 1: Master Retreat"></button>
+              <button type="button" class="carousel-dot" data-slide="1" role="tab" aria-selected="false" aria-label="Suite 2: Poolside Queen"></button>
+              <button type="button" class="carousel-dot" data-slide="2" role="tab" aria-selected="false" aria-label="Suite 3: Family Twin"></button>
+            </div>
+            <span class="carousel-counter" id="rooms-counter" aria-live="polite">01 / 03</span>
+            <button type="button" class="carousel-arrow next" id="rooms-next-btn" aria-label="Next suite">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Architectural Floorplan Preview -->
+        <div class="floorplan-container reveal-on-scroll">
+          <div class="floorplan-header">
+            <div>
+              <span class="section-label" style="margin-bottom: 6px;">Spatial Layout</span>
+              <h3 style="font-family: var(--font-display); font-weight: 400; font-size: 1.5rem; margin: 0;">Architectural Floorplan</h3>
+            </div>
+            <span class="badge-pill">Total 320m² Built · 450m² Land</span>
+          </div>
+
+          <div class="floorplan-svg-wrap" aria-label="Floorplan Layout Diagram">
+            <svg viewBox="0 0 800 320" width="100%" height="auto" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Ground Level -->
+              <rect x="20" y="20" width="360" height="280" rx="6" fill="#FFFFFF" stroke="#D2CDBD" stroke-width="2"/>
+              <text x="40" y="50" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="14" fill="#1C1B19">GROUND LEVEL</text>
+              
+              <!-- Pool & Garden -->
+              <rect x="40" y="70" width="140" height="100" rx="4" fill="#E8F1F2" stroke="#B8D0D6" stroke-width="1.5"/>
+              <text x="65" y="125" font-size="12" font-weight="600" fill="#2E6272">Plunge Pool</text>
+              
+              <!-- Living Pavilion -->
+              <rect x="190" y="70" width="170" height="130" rx="4" fill="#F8F7F3" stroke="#D2CDBD" stroke-width="1.5"/>
+              <text x="215" y="130" font-size="12" font-weight="600" fill="#1C1B19">Open Living & Dining</text>
+              <text x="225" y="150" font-size="10" fill="#848178">Kitchen & Island</text>
+
+              <!-- Suite 02 -->
+              <rect x="40" y="180" width="140" height="100" rx="4" fill="#FAF9F6" stroke="#D2CDBD" stroke-width="1.5"/>
+              <text x="60" y="225" font-size="12" font-weight="600" fill="#1C1B19">Suite 02 (Queen)</text>
+              <text x="60" y="245" font-size="10" fill="#848178">Ensuite Bath</text>
+
+              <!-- Upper Level -->
+              <rect x="420" y="20" width="360" height="280" rx="6" fill="#FFFFFF" stroke="#D2CDBD" stroke-width="2"/>
+              <text x="440" y="50" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="14" fill="#1C1B19">UPPER LEVEL</text>
+
+              <!-- Suite 01 Master -->
+              <rect x="440" y="70" width="190" height="130" rx="4" fill="#FAF9F6" stroke="#C29B62" stroke-width="1.5"/>
+              <text x="460" y="120" font-size="12" font-weight="600" fill="#1C1B19">Suite 01 · Master King</text>
+              <text x="460" y="140" font-size="10" fill="#848178">Soaking Tub + Balcony</text>
+
+              <!-- Suite 03 -->
+              <rect x="440" y="210" width="190" height="70" rx="4" fill="#FAF9F6" stroke="#D2CDBD" stroke-width="1.5"/>
+              <text x="460" y="245" font-size="12" font-weight="600" fill="#1C1B19">Suite 03 (Twin Beds)</text>
+
+              <!-- Terrace Lounge -->
+              <rect x="640" y="70" width="120" height="210" rx="4" fill="#F8F7F3" stroke="#D2CDBD" stroke-width="1.5"/>
+              <text x="660" y="165" font-size="12" font-weight="600" fill="#848178">Sea Breeze</text>
+              <text x="670" y="185" font-size="11" fill="#848178">Terrace</text>
+            </svg>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         ACT 4: PLAN WITH CONFIDENCE — Pricing Calculator & Trust Process
+         ====================================================================== -->
+    <section class="pricing-section" id="pricing" aria-label="Transparent Pricing Breakdown">
+      <div class="container">
+        <div class="reveal-on-scroll">
+          <span class="section-label">Price Transparency</span>
+          <h2 class="section-title">Clear rates.<br><em>Zero surprise fees.</em></h2>
+          <p class="section-subtitle">
+            We believe luxury hospitality starts with total honesty. Here is the exact cost structure for whole-villa occupancy.
+          </p>
+        </div>
+
+        <div class="pricing-layout">
+          <!-- Standard Rate Breakdown Table -->
+          <div class="pricing-breakdown-card reveal-on-scroll" data-stagger="1">
+            <h3 class="pricing-card-title">Standard Schedule</h3>
+            <table class="rate-table">
+              <tbody>
+                <tr>
+                  <td>Weekday Rate (Sun–Thu)</td>
+                  <td>$350 / night</td>
+                </tr>
+                <tr>
+                  <td>Weekend Rate (Fri–Sat)</td>
+                  <td>$420 / night</td>
+                </tr>
+                <tr>
+                  <td>Whole-Villa Standard Capacity</td>
+                  <td>Included (up to 8 guests)</td>
+                </tr>
+                <tr>
+                  <td>Professional Turnover & Daily Housekeeping</td>
+                  <td><span class="tag-included">Included</span></td>
+                </tr>
+                <tr>
+                  <td>High-Speed Mesh Wi-Fi & Utilities</td>
+                  <td><span class="tag-included">Included</span></td>
+                </tr>
+                <tr>
+                  <td>Security Deposit (Fully refundable on departure)</td>
+                  <td>$200</td>
+                </tr>
+                <tr>
+                  <td>Cancellation Terms</td>
+                  <td>100% refund up to 7 days prior</td>
+                </tr>
+              </tbody>
+            </table>
+            <p style="font-size: 0.8rem; color: var(--ink-muted); margin: 0;">
+              * Long-stay privileges: Inquire for preferential weekly (7+ nights) or monthly rates.
+            </p>
+          </div>
+
+          <!-- Interactive Price & Per-Person Estimator -->
+          <div class="calc-card reveal-on-scroll" data-stagger="2">
+            <h3 class="pricing-card-title">Quick Stay Estimator</h3>
+            
+            <div class="calc-field-group">
+              <div class="calc-input-row">
+                <div>
+                  <label class="calc-label" for="calc-checkin">Check-in</label>
+                  <input type="date" id="calc-checkin" class="calc-input">
+                </div>
+                <div>
+                  <label class="calc-label" for="calc-checkout">Check-out</label>
+                  <input type="date" id="calc-checkout" class="calc-input">
+                </div>
+              </div>
+
+              <div>
+                <label class="calc-label" for="calc-guests">Number of Guests</label>
+                <select id="calc-guests" class="calc-input">
+                  <option value="4">4 Guests</option>
+                  <option value="6">6 Guests</option>
+                  <option value="8" selected>8 Guests (Standard)</option>
+                  <option value="10">10 Guests (Max)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="calc-result-box" id="calc-results">
+              <div class="calc-result-row">
+                <span>Estimated Duration:</span>
+                <strong id="calc-duration">2 nights</strong>
+              </div>
+              <div class="calc-result-row">
+                <span>Estimated Total Rate:</span>
+                <strong id="calc-total">$770</strong>
+              </div>
+              <div class="calc-result-row highlight">
+                <div>
+                  <span style="font-size: 0.8rem; color: var(--ink-secondary); display: block;">Per person estimate:</span>
+                  <strong style="font-size: 0.85rem; color: var(--ink);">Split across <span id="calc-guest-display">8</span> guests</strong>
+                </div>
+                <div class="val-per-person" id="calc-per-person">$48 / night</div>
+              </div>
+            </div>
+
+            <p style="font-size: 0.78rem; color: var(--ink-muted); margin-top: 14px; margin-bottom: 0;">
+              Estimate based on typical weekday/weekend blend. Exact quote confirmed directly by host upon inquiry.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 3-Step Booking Process -->
+    <section class="trust-section" id="process" aria-label="How Booking Works">
+      <div class="container">
+        <div class="reveal-on-scroll" style="text-align: center; max-width: 640px; margin: 0 auto;">
+          <span class="section-label">Direct & Simple</span>
+          <h2 class="section-title">How booking works</h2>
+          <p style="color: var(--ink-secondary); font-size: 0.95rem;">
+            No automated runarounds. You deal directly with our verified local hosting team from your first question to departure.
+          </p>
+        </div>
+
+        <div class="steps-grid">
+          <div class="step-card reveal-on-scroll" data-stagger="1">
+            <div class="step-badge">1</div>
+            <h3 class="step-title">Send Inquiry</h3>
+            <p class="step-desc">
+              Message us on WhatsApp or submit your dates. Tell us about your group size and any arrival preferences.
+            </p>
+          </div>
+
+          <div class="step-card reveal-on-scroll" data-stagger="2">
+            <div class="step-badge">2</div>
+            <h3 class="step-title">Host Confirmation</h3>
+            <p class="step-desc">
+              We check real-time availability with the owner and return an all-inclusive, binding quote within 2 hours.
+            </p>
+          </div>
+
+          <div class="step-card reveal-on-scroll" data-stagger="3">
+            <div class="step-badge">3</div>
+            <h3 class="step-title">Secure & Arrive</h3>
+            <p class="step-desc">
+              Confirm your reservation with a standard 30% deposit. Receive detailed arrival directions and door-access assistance.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         ACT 5: CLOSE — Hybrid Enquiry Module (Approved 2026-11-05)
+         ====================================================================== -->
+    <section class="enquiry-section" id="enquiry" aria-label="Reserve or Inquire">
+      <div class="container">
+        
+        <div class="enquiry-card reveal-on-scroll">
+          <!-- Info Column (Dark) -->
+          <div class="enquiry-info-pane">
+            <div>
+              <span class="section-label" style="color: var(--accent-warm);">Let's Plan Your Stay</span>
+              <h3>Have questions?<br><em>We’re on WhatsApp.</em></h3>
+              <p>
+                Ask about early check-in, private local seafood chef recommendations, or crib setups for toddlers. Our local team replies within 2 hours.
+              </p>
+              
+              <ul class="host-assurance-list">
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                  English & Vietnamese support daily (08:00 – 22:00)
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                  Verified host mandate & direct property inspection
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                  No reservation commitment until dates are locked
+                </li>
+              </ul>
+            </div>
+
+            <div style="border-top: 1px solid rgba(255,255,255,0.12); padding-top: 20px; margin-top: 30px;">
+              <span style="font-size: 0.76rem; color: #8F8C83; text-transform: uppercase; letter-spacing: 0.08em; display: block; margin-bottom: 6px;">Direct Line</span>
+              <strong style="font-size: 1.1rem; color: #FFFFFF;">+84 90 000 0000</strong>
+            </div>
+          </div>
+
+          <!-- Form Column (Light) -->
+          <div class="enquiry-form-pane">
+            <h3 style="font-family: var(--font-display); font-weight: 400; font-size: 1.6rem; margin: 0 0 8px 0;">Draft Your Stay Inquiry</h3>
+            <p style="font-size: 0.88rem; color: var(--ink-secondary); margin-bottom: 24px;">
+              Fill in your expected dates below to generate a pre-drafted WhatsApp message, or skip straight to chat.
+            </p>
+
+            <form class="enquiry-form" id="inquiry-form" onsubmit="return false;">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="form-checkin">Check-in Date (Optional)</label>
+                  <input type="date" id="form-checkin" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label for="form-checkout">Check-out Date (Optional)</label>
+                  <input type="date" id="form-checkout" class="form-control">
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="form-guests">Group Size</label>
+                  <select id="form-guests" class="form-control">
+                    <option value="">Flexible / Not decided</option>
+                    <option value="2-4 guests">2 – 4 Guests</option>
+                    <option value="5-8 guests" selected>5 – 8 Guests</option>
+                    <option value="9-10 guests">9 – 10 Guests (Max)</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="form-purpose">Stay Purpose (Optional)</label>
+                  <select id="form-purpose" class="form-control">
+                    <option value="Family holiday">Family Holiday</option>
+                    <option value="Friends getaway">Friends Getaway</option>
+                    <option value="Workation retreat">Workation / Team Retreat</option>
+                    <option value="Special celebration">Special Celebration</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="form-notes">Special Requests / Questions</label>
+                <textarea id="form-notes" class="form-control" rows="2" placeholder="e.g. Early check-in preference, baby crib, BBQ inquiry..."></textarea>
+              </div>
+
+              <!-- Main Action: Pre-filled WhatsApp Generator -->
+              <button type="button" class="btn btn-whatsapp" id="send-whatsapp-draft-btn" style="width: 100%; padding: 14px; font-size: 0.95rem;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.072-2.129-.523-1.637-.678-2.696-2.345-2.777-2.454-.082-.109-.661-.88-.661-1.678 0-.797.414-1.189.561-1.352.147-.163.32-.204.427-.204.108 0 .216.002.311.007.1.006.234-.038.366.279.135.326.46 1.123.5 1.205.04.082.067.177.013.285-.054.108-.081.176-.162.272-.081.095-.171.213-.245.286-.081.082-.167.171-.072.335.095.163.422.696.906 1.127.623.555 1.149.728 1.312.809.163.082.259.071.354-.04.095-.112.408-.475.517-.638.109-.163.218-.136.368-.082.15.054.954.449 1.118.531.163.082.272.122.312.19.04.068.04.394-.104.799z"/></svg>
+                Continue to WhatsApp with Draft ↗
+              </button>
+
+              <div class="enquiry-direct-options">
+                <a href="https://wa.me/84900000000" target="_blank" rel="noopener noreferrer" style="font-size: 0.82rem; color: var(--ink-secondary); font-weight: 600; text-decoration: underline;">
+                  Open empty WhatsApp chat instead
+                </a>
+                <button type="button" class="btn btn-outline btn-sm" id="form-ota-btn">
+                  View OTA Platforms
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======================================================================
+       MODAL: OTA PLATFORMS COMPARISON (Airbnb & Booking.com)
+       ====================================================================== -->
+  <div class="modal-backdrop" id="ota-modal" role="dialog" aria-modal="true" aria-labelledby="ota-modal-title">
+    <div class="modal-content">
+      <button type="button" class="modal-close" id="close-ota-modal-btn" aria-label="Close dialog">&times;</button>
+      
+      <span class="section-label">Booking Channels</span>
+      <h3 id="ota-modal-title" style="font-family: var(--font-display); font-weight: 400; font-size: 1.8rem; margin: 0 0 12px 0;">External Booking Platforms</h3>
+      <p style="font-size: 0.9rem; color: var(--ink-secondary); margin-bottom: 20px;">
+        For travelers who prefer third-party protection or loyalty tiers, our villa will be listed on verified platforms once pilot launch registration completes.
+      </p>
+
+      <div class="ota-channels-grid">
+        <div class="ota-channel-box">
+          <div class="platform-name">Airbnb</div>
+          <span class="platform-status">Listing Registration in QA</span>
+          <button class="btn btn-outline btn-sm" style="width: 100%; opacity: 0.7; cursor: not-allowed;" disabled>
+            Opening Soon
+          </button>
+        </div>
+
+        <div class="ota-channel-box">
+          <div class="platform-name">Booking.com</div>
+          <span class="platform-status">Listing Registration in QA</span>
+          <button class="btn btn-outline btn-sm" style="width: 100%; opacity: 0.7; cursor: not-allowed;" disabled>
+            Opening Soon
+          </button>
+        </div>
+      </div>
+
+      <div style="background: var(--surface-alt); padding: 16px; border-radius: var(--radius-sm); border-left: 3px solid var(--accent-warm);">
+        <strong style="font-size: 0.85rem; color: var(--ink); display: block; margin-bottom: 4px;">Direct Booking Benefit:</strong>
+        <p style="font-size: 0.82rem; color: var(--ink-secondary); margin: 0;">
+          Direct WhatsApp inquiries guarantee the best rate, zero OTA platform service fees, and priority communication directly with property management.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Sticky Bottom Action Bar -->
+  <aside class="mobile-bottom-bar" id="mobile-action-bar" aria-label="Quick Booking Bar">
+    <div class="bottom-bar-pricing bar-pricing-col">
+      <div class="bar-price-main">From $350 <span class="bar-price-unit"><small>/ night</small></span></div>
+      <div class="bar-capacity bar-price-sub">Whole Villa · 6–8 Guests</div>
+    </div>
+    <div class="bottom-bar-actions bar-actions-col">
+      <a class="btn btn-whatsapp bar-btn" id="bar-whatsapp-btn" href="https://wa.me/84900000000?text=Hello%20The%20Hiu,%20I%20am%20interested%20in%20staying%20at%20the%20villa.%20Could%20you%20share%20availability%20and%20rates?" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.072-2.129-.523-1.637-.678-2.696-2.345-2.777-2.454-.082-.109-.661-.88-.661-1.678 0-.797.414-1.189.561-1.352.147-.163.32-.204.427-.204.108 0 .216.002.311.007.1.006.234-.038.366.279.135.326.46 1.123.5 1.205.04.082.067.177.013.285-.054.108-.081.176-.162.272-.081.095-.171.213-.245.286-.081.082-.167.171-.072.335.095.163.422.696.906 1.127.623.555 1.149.728 1.312.809.163.082.272.122.312.19.04.068.04.394-.104.799z"/></svg>
+        Chat on WhatsApp
+      </a>
+    </div>
+  </aside>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <a class="brand-mark" href="#top">the hiu<span>.</span></a>
+        <p style="margin: 6px 0 0 0; font-size: 0.8rem; color: var(--ink-muted);">
+          Whole-Villa Stays · Vũng Tàu, Vietnam · Internal Preview Prototype
+        </p>
+      </div>
+      <div>
+        <a href="#top" style="font-weight: 600; font-size: 0.82rem; border-bottom: 1px solid var(--ink); padding-bottom: 2px;">
+          Back to Top ↑
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
