@@ -603,6 +603,79 @@
   }
 
   // =========================================================================
+  // Section 7B: In-Card Multi-Photo Carousel Controller (Bedroom Suite Galleries)
+  // =========================================================================
+  const roomCarousels = document.querySelectorAll('.room-gallery-carousel');
+  roomCarousels.forEach((carousel) => {
+    const slides = Array.from(carousel.querySelectorAll('.gallery-slide'));
+    const dots = Array.from(carousel.querySelectorAll('.gallery-dot'));
+    const prevBtn = carousel.querySelector('.gallery-nav-btn.prev');
+    const nextBtn = carousel.querySelector('.gallery-nav-btn.next');
+    let currentIdx = 0;
+
+    function goToSlide(idx) {
+      if (slides.length <= 1) return;
+      currentIdx = (idx + slides.length) % slides.length;
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('is-active', i === currentIdx);
+      });
+      dots.forEach((dot, i) => {
+        const isActive = i === currentIdx;
+        dot.classList.toggle('is-active', isActive);
+        dot.setAttribute('aria-selected', isActive ? 'true' : 'false');
+      });
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        goToSlide(currentIdx - 1);
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        goToSlide(currentIdx + 1);
+      });
+    }
+
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        goToSlide(i);
+      });
+      dot.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          goToSlide(i);
+        }
+      });
+    });
+
+    // Touch swipe support on each photo
+    let startX = 0;
+    carousel.addEventListener('touchstart', (e) => {
+      if (e.touches && e.touches[0]) {
+        startX = e.touches[0].clientX;
+      }
+    }, { passive: true });
+
+    carousel.addEventListener('touchend', (e) => {
+      if (e.changedTouches && e.changedTouches[0]) {
+        const diffX = e.changedTouches[0].clientX - startX;
+        if (Math.abs(diffX) > 40) {
+          if (diffX < 0) goToSlide(currentIdx + 1);
+          else goToSlide(currentIdx - 1);
+        }
+      }
+    }, { passive: true });
+  });
+
+  // =========================================================================
   // Section 8: Mobile Sticky Bottom Action Bar Controller (<768px)
   // =========================================================================
   const mobileActionBar = document.getElementById('mobile-action-bar');

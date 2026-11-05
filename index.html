@@ -269,9 +269,24 @@
         <div class="rooms-carousel-wrapper" id="rooms-carousel">
           <div class="rooms-grid" id="rooms-grid" role="region" aria-label="Bedroom Suites Carousel" tabindex="0">
             <!-- Room 1 -->
-            <article class="room-card sc-reveal">
-              <div class="room-media">
-                <img src="assets/bedroom-1.jpg" alt="Master King Suite bedroom">
+            <article class="room-card sc-reveal" data-room-id="suite-1">
+              <div class="room-media room-gallery-carousel" data-room="suite-1" aria-label="Suite 01 photo gallery">
+                <div class="room-gallery-slides">
+                  <img src="assets/bedroom-1.jpg" alt="Suite 01 · Master King Suite primary bedroom" class="gallery-slide is-active" data-index="0">
+                  <img src="assets/suite1-2.jpg" alt="Suite 01 · Private morning balcony overlooking garden and mountains" class="gallery-slide" data-index="1" loading="lazy">
+                  <img src="assets/suite1-3.jpg" alt="Suite 01 · Ensuite bathroom & hardwood dressing area" class="gallery-slide" data-index="2" loading="lazy">
+                </div>
+                <button type="button" class="gallery-nav-btn prev" aria-label="Previous photo of Suite 01">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+                </button>
+                <button type="button" class="gallery-nav-btn next" aria-label="Next photo of Suite 01">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+                </button>
+                <div class="gallery-dots" role="tablist" aria-label="Suite 01 photos">
+                  <span class="gallery-dot is-active" data-slide="0" role="tab" aria-label="Photo 1: Master King bed" aria-selected="true" tabindex="0"></span>
+                  <span class="gallery-dot" data-slide="1" role="tab" aria-label="Photo 2: Balcony view" aria-selected="false" tabindex="0"></span>
+                  <span class="gallery-dot" data-slide="2" role="tab" aria-label="Photo 3: Ensuite bath" aria-selected="false" tabindex="0"></span>
+                </div>
                 <span class="room-badge">Level 2 · Primary</span>
               </div>
               <div class="room-details">
@@ -286,9 +301,24 @@
             </article>
 
             <!-- Room 2 -->
-            <article class="room-card sc-reveal" data-stagger="1">
-              <div class="room-media">
-                <img src="assets/bedroom-2.jpg" alt="Garden Queen Room">
+            <article class="room-card sc-reveal" data-stagger="1" data-room-id="suite-2">
+              <div class="room-media room-gallery-carousel" data-room="suite-2" aria-label="Suite 02 photo gallery">
+                <div class="room-gallery-slides">
+                  <img src="assets/bedroom-2.jpg" alt="Suite 02 · Poolside Queen room with garden window" class="gallery-slide is-active" data-index="0">
+                  <img src="assets/suite2-2.jpg" alt="Suite 02 · Royal white wardrobes & dressing vanity" class="gallery-slide" data-index="1" loading="lazy">
+                  <img src="assets/suite2-3.jpg" alt="Suite 02 · Ground-level step-out patio to poolside" class="gallery-slide" data-index="2" loading="lazy">
+                </div>
+                <button type="button" class="gallery-nav-btn prev" aria-label="Previous photo of Suite 02">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+                </button>
+                <button type="button" class="gallery-nav-btn next" aria-label="Next photo of Suite 02">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+                </button>
+                <div class="gallery-dots" role="tablist" aria-label="Suite 02 photos">
+                  <span class="gallery-dot is-active" data-slide="0" role="tab" aria-label="Photo 1: Queen bed" aria-selected="true" tabindex="0"></span>
+                  <span class="gallery-dot" data-slide="1" role="tab" aria-label="Photo 2: Wardrobe" aria-selected="false" tabindex="0"></span>
+                  <span class="gallery-dot" data-slide="2" role="tab" aria-label="Photo 3: Patio access" aria-selected="false" tabindex="0"></span>
+                </div>
                 <span class="room-badge">Level 1 · Garden View</span>
               </div>
               <div class="room-details">
@@ -303,9 +333,24 @@
             </article>
 
             <!-- Room 3 -->
-            <article class="room-card sc-reveal" data-stagger="2">
-              <div class="room-media">
-                <img src="assets/bedroom-3.jpg" alt="Family Twin Room">
+            <article class="room-card sc-reveal" data-stagger="2" data-room-id="suite-3">
+              <div class="room-media room-gallery-carousel" data-room="suite-3" aria-label="Suite 03 photo gallery">
+                <div class="room-gallery-slides">
+                  <img src="assets/bedroom-3.jpg" alt="Suite 03 · Family Twin room with coastal accents" class="gallery-slide is-active" data-index="0">
+                  <img src="assets/suite3-2.jpg" alt="Suite 03 · Billiards & entertainment lounge corner" class="gallery-slide" data-index="1" loading="lazy">
+                  <img src="assets/suite3-3.jpg" alt="Suite 03 · Courtyard patio view" class="gallery-slide" data-index="2" loading="lazy">
+                </div>
+                <button type="button" class="gallery-nav-btn prev" aria-label="Previous photo of Suite 03">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+                </button>
+                <button type="button" class="gallery-nav-btn next" aria-label="Next photo of Suite 03">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+                </button>
+                <div class="gallery-dots" role="tablist" aria-label="Suite 03 photos">
+                  <span class="gallery-dot is-active" data-slide="0" role="tab" aria-label="Photo 1: Twin beds" aria-selected="true" tabindex="0"></span>
+                  <span class="gallery-dot" data-slide="1" role="tab" aria-label="Photo 2: Billiards room" aria-selected="false" tabindex="0"></span>
+                  <span class="gallery-dot" data-slide="2" role="tab" aria-label="Photo 3: Courtyard view" aria-selected="false" tabindex="0"></span>
+                </div>
                 <span class="room-badge">Level 2 · Versatile</span>
               </div>
               <div class="room-details">

@@ -881,6 +881,130 @@ h1, h2, h3, h4 {
   border-radius: var(--radius-sm);
   letter-spacing: 0.05em;
   backdrop-filter: blur(4px);
+  z-index: 5;
+}
+
+/* In-Card Multi-Photo Carousel Gallery (Airbnb-style) */
+.room-gallery-carousel {
+  position: relative;
+  height: 240px;
+  overflow: hidden;
+  background: var(--surface-alt);
+}
+
+.room-gallery-slides {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.room-gallery-slides img,
+.gallery-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 300ms cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s ease;
+  pointer-events: none;
+}
+
+.gallery-slide.is-active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.room-card:hover .gallery-slide.is-active {
+  transform: scale(1.025);
+}
+
+/* Gallery Arrows (Subtle circular buttons inside image area) */
+.gallery-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-pill);
+  background: rgba(249, 248, 245, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(28, 27, 25, 0.12);
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 6;
+  opacity: 0;
+  transition: opacity 0.2s ease, background 0.2s ease, transform 0.15s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.16);
+  padding: 0;
+}
+
+.room-card:hover .gallery-nav-btn,
+.gallery-nav-btn:focus-visible {
+  opacity: 1;
+}
+
+@media (max-width: 991px) {
+  .gallery-nav-btn {
+    opacity: 0.92;
+  }
+}
+
+.gallery-nav-btn.prev {
+  left: 10px;
+}
+
+.gallery-nav-btn.next {
+  right: 10px;
+}
+
+.gallery-nav-btn:hover {
+  background: #FFFFFF;
+  color: var(--ink);
+  transform: translateY(-50%) scale(1.06);
+}
+
+.gallery-nav-btn:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+/* Gallery Dots (Bottom-right badge counter / dots) */
+.gallery-dots {
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
+  display: flex;
+  gap: 5px;
+  z-index: 6;
+  align-items: center;
+  background: rgba(28, 27, 25, 0.55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  padding: 4px 8px;
+  border-radius: var(--radius-pill);
+}
+
+.gallery-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.gallery-dot.is-active {
+  background: #FFFFFF;
+  width: 14px;
+  border-radius: 4px;
 }
 
 .room-details {
@@ -1733,7 +1857,12 @@ h1, h2, h3, h4 {
   .side-nav-line,
   .carousel-arrow,
   .carousel-arrow:active,
-  .carousel-dot {
+  .carousel-dot,
+  .gallery-nav-btn,
+  .gallery-nav-btn:hover,
+  .gallery-nav-btn:active,
+  .gallery-slide,
+  .gallery-dot {
     transform: none !important;
   }
   .mobile-bottom-bar {
