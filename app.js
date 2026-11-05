@@ -773,4 +773,375 @@
     });
   }
 
+  // =========================================================================
+  // Section 10: Interactive Floorplan & Spatial Explorer Controller
+  // =========================================================================
+  const FLOORPLAN_ZONES = {
+    'suite-1': {
+      id: 'suite-1',
+      name: 'Suite 01 · Master Retreat',
+      level: 'upper',
+      levelBadge: 'Level 2 · Upper Level',
+      size: '36m² Private Area',
+      bed: '1 King Bed · Ensuite Bath with Soaking Tub',
+      amenities: [
+        'Private morning balcony overlooking garden & mountains',
+        'Deep soaking tub & walk-in rainfall shower',
+        'Quiet inverter AC & dedicated hardwood vanity'
+      ],
+      inquiryTag: 'Suite 01 Master Retreat',
+      photos: [
+        { src: 'assets/bedroom-1.jpg', alt: 'Suite 01 · Master King Suite primary bedroom' },
+        { src: 'assets/suite1-2.jpg', alt: 'Suite 01 · Private morning balcony overlooking garden' },
+        { src: 'assets/suite1-3.jpg', alt: 'Suite 01 · Ensuite bathroom & hardwood dressing vanity' }
+      ]
+    },
+    'suite-2': {
+      id: 'suite-2',
+      name: 'Suite 02 · Poolside Queen',
+      level: 'ground',
+      levelBadge: 'Level 1 · Ground Level',
+      size: '28m² Private Area',
+      bed: '1 Queen Bed · Ensuite Bath',
+      amenities: [
+        'Direct ground-level step-out access to poolside',
+        'Quiet inverter AC & royal wardrobe vanity',
+        'Walk-in rainfall shower & natural garden view'
+      ],
+      inquiryTag: 'Suite 02 Poolside Queen',
+      photos: [
+        { src: 'assets/bedroom-2.jpg', alt: 'Suite 02 · Poolside Queen room with garden window' },
+        { src: 'assets/suite2-2.jpg', alt: 'Suite 02 · Royal white wardrobes & dressing vanity' },
+        { src: 'assets/suite2-3.jpg', alt: 'Suite 02 · Ground-level step-out patio to poolside' }
+      ]
+    },
+    'suite-3': {
+      id: 'suite-3',
+      name: 'Suite 03 · Family Twin',
+      level: 'upper',
+      levelBadge: 'Level 2 · Upper Level',
+      size: '24m² Private Area',
+      bed: '2 Twin Beds (Joinable to King)',
+      amenities: [
+        'Adjacent to billiards & entertainment lounge corner',
+        'Quiet courtyard patio view & high-ceiling breeze',
+        'Flexible bedding ideal for children, friends, or colleagues'
+      ],
+      inquiryTag: 'Suite 03 Family Twin',
+      photos: [
+        { src: 'assets/bedroom-3.jpg', alt: 'Suite 03 · Family Twin room with coastal accents' },
+        { src: 'assets/suite3-2.jpg', alt: 'Suite 03 · Billiards & entertainment lounge corner' },
+        { src: 'assets/suite3-3.jpg', alt: 'Suite 03 · Courtyard patio view' }
+      ]
+    },
+    'pool': {
+      id: 'pool',
+      name: 'Plunge Pool & Garden Deck',
+      level: 'ground',
+      levelBadge: 'Level 1 · Outdoor Oasis',
+      size: '45m² Pool & Deck',
+      bed: 'Loungers & Sun Umbrellas',
+      amenities: [
+        'Crystal turquoise plunge pool with gentle depth grading',
+        'Surrounded by mature frangipani trees and coastal palms',
+        'Outdoor rainfall rinse shower and wooden sun loungers'
+      ],
+      inquiryTag: 'Plunge Pool & Garden',
+      photos: [
+        { src: 'assets/pool.jpg', alt: 'Plunge Pool surrounded by tropical palms and sun deck' },
+        { src: 'assets/garden.jpg', alt: 'Lush private garden path and frangipani flowers' }
+      ]
+    },
+    'living': {
+      id: 'living',
+      name: 'Open Living & Dining Pavilion',
+      level: 'ground',
+      levelBadge: 'Level 1 · Common Pavilion',
+      size: '85m² Communal Space',
+      bed: 'Dining for 8–10 Guests',
+      amenities: [
+        'Double-height ceiling with floor-to-ceiling sliding glass doors',
+        'Fully equipped chef kitchen, espresso bar, and induction island',
+        'L-shaped lounge seating with cinematic garden views'
+      ],
+      inquiryTag: 'Living & Dining Pavilion',
+      photos: [
+        { src: 'assets/living.jpg', alt: 'Double-height living pavilion with designer sofa and garden view' },
+        { src: 'assets/dining.jpg', alt: 'Kitchen island and hardwood dining table set for 8 guests' }
+      ]
+    },
+    'terrace': {
+      id: 'terrace',
+      name: 'Sea Breeze Upper Terrace',
+      level: 'upper',
+      levelBadge: 'Level 2 · Sunset Lounge',
+      size: '35m² Open Terrace',
+      bed: 'Outdoor Lounge Seating',
+      amenities: [
+        'Panoramic view of Vũng Tàu coastal skyline and green hills',
+        'Open-air evening cocktail setting with ambient festoon lighting',
+        'Constant natural sea breeze and quiet morning yoga space'
+      ],
+      inquiryTag: 'Sea Breeze Terrace',
+      photos: [
+        { src: 'assets/garden.jpg', alt: 'Upper terrace lounge overlooking garden and hills' }
+      ]
+    }
+  };
+
+  const floorplanZones = document.querySelectorAll('.floorplan-zone');
+  const roomChips = document.querySelectorAll('.room-chip');
+  const levelButtons = document.querySelectorAll('.level-toggle-btn');
+  const mapGround = document.getElementById('map-ground-level');
+  const mapUpper = document.getElementById('map-upper-level');
+  const teaserPill = document.getElementById('floorplan-teaser-pill');
+  const teaserDismissBtn = document.getElementById('teaser-dismiss-btn');
+  const inspectorImg = document.getElementById('inspector-active-img');
+  const inspectorPhotoCounter = document.getElementById('inspector-photo-counter');
+  const inspectorPrevBtn = document.getElementById('inspector-prev-btn');
+  const inspectorNextBtn = document.getElementById('inspector-next-btn');
+  const inspectorDots = document.getElementById('inspector-dots');
+  const inspectorBadge = document.getElementById('inspector-badge');
+  const inspectorSize = document.getElementById('inspector-size');
+  const inspectorTitle = document.getElementById('inspector-title');
+  const inspectorBed = document.getElementById('inspector-bed');
+  const inspectorAmenities = document.getElementById('inspector-amenities');
+  const inspectorInquireBtn = document.getElementById('inspector-inquire-btn');
+
+  const amenityItems = inspectorAmenities ? Array.from(inspectorAmenities.querySelectorAll('.amenity-item')) : [];
+  const dotItems = inspectorDots ? Array.from(inspectorDots.querySelectorAll('.inspector-dot')) : [];
+
+  let currentZoneId = 'suite-1';
+  let currentPhotoIndex = 0;
+  let teaserDismissed = false;
+
+  if (dotItems.length) {
+    dotItems.forEach((dot, idx) => {
+      dot.addEventListener('click', (e) => {
+        e.stopPropagation();
+        renderInspectorPhoto(idx);
+      });
+    });
+  }
+
+  function dismissTeaser() {
+    if (teaserDismissed || !teaserPill) return;
+    teaserDismissed = true;
+    teaserPill.classList.add('is-dismissed');
+    setTimeout(() => {
+      if (teaserPill) teaserPill.style.display = 'none';
+    }, 320);
+  }
+
+  if (teaserDismissBtn) {
+    teaserDismissBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      dismissTeaser();
+    });
+  }
+
+  function renderInspectorPhoto(photoIdx) {
+    const data = FLOORPLAN_ZONES[currentZoneId];
+    if (!data || !data.photos.length) return;
+
+    if (photoIdx < 0) photoIdx = data.photos.length - 1;
+    if (photoIdx >= data.photos.length) photoIdx = 0;
+    currentPhotoIndex = photoIdx;
+
+    const curPhoto = data.photos[currentPhotoIndex];
+    if (inspectorImg) {
+      inspectorImg.src = curPhoto.src;
+      inspectorImg.setAttribute('src', curPhoto.src);
+      inspectorImg.alt = curPhoto.alt;
+      inspectorImg.setAttribute('alt', curPhoto.alt);
+    }
+
+    if (inspectorPhotoCounter) {
+      inspectorPhotoCounter.textContent = `Photo ${currentPhotoIndex + 1} of ${data.photos.length}`;
+    }
+
+    if (dotItems.length) {
+      dotItems.forEach((dot, idx) => {
+        if (idx < data.photos.length) {
+          dot.style.display = 'inline-block';
+          dot.classList.toggle('is-active', idx === currentPhotoIndex);
+          dot.setAttribute('aria-selected', idx === currentPhotoIndex ? 'true' : 'false');
+        } else {
+          dot.style.display = 'none';
+        }
+      });
+    }
+  }
+
+  function selectZone(zoneId, photoIdx = 0) {
+    const data = FLOORPLAN_ZONES[zoneId];
+    if (!data) return;
+
+    currentZoneId = zoneId;
+    dismissTeaser();
+
+    // 1. Update SVG Zones
+    floorplanZones.forEach(z => {
+      const match = z.getAttribute('data-zone-id') === zoneId;
+      z.classList.toggle('is-active', match);
+      z.setAttribute('aria-selected', match ? 'true' : 'false');
+    });
+
+    // 2. Update Quick Chips
+    roomChips.forEach(chip => {
+      const match = chip.getAttribute('data-zone-id') === zoneId;
+      chip.classList.toggle('is-active', match);
+      chip.setAttribute('aria-selected', match ? 'true' : 'false');
+      if (match && chip.scrollIntoView) {
+        try {
+          chip.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        } catch (_) {}
+      }
+    });
+
+    // 3. Update Text Content
+    if (inspectorBadge) inspectorBadge.textContent = data.levelBadge;
+    if (inspectorSize) inspectorSize.textContent = data.size;
+    if (inspectorTitle) inspectorTitle.textContent = data.name;
+    if (inspectorBed) inspectorBed.textContent = data.bed;
+
+    if (amenityItems.length) {
+      amenityItems.forEach((li, idx) => {
+        if (idx < data.amenities.length) {
+          li.textContent = data.amenities[idx];
+          li.style.display = 'block';
+        } else {
+          li.style.display = 'none';
+        }
+      });
+    }
+
+    if (inspectorInquireBtn) {
+      const shortName = data.name.split('·')[0].trim();
+      const span = inspectorInquireBtn.querySelector('span');
+      if (span) span.textContent = `Inquire for ${shortName}`;
+    }
+
+    // 4. Render Photo
+    renderInspectorPhoto(photoIdx);
+  }
+
+  // Prev / Next Arrows
+  if (inspectorPrevBtn) {
+    inspectorPrevBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      renderInspectorPhoto(currentPhotoIndex - 1);
+    });
+  }
+
+  if (inspectorNextBtn) {
+    inspectorNextBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      renderInspectorPhoto(currentPhotoIndex + 1);
+    });
+  }
+
+  // Zone click and keydown handlers
+  floorplanZones.forEach(zone => {
+    const zid = zone.getAttribute('data-zone-id');
+    zone.addEventListener('click', () => {
+      selectZone(zid, 0);
+    });
+    zone.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        selectZone(zid, 0);
+      }
+    });
+  });
+
+  // Room chips click handlers
+  roomChips.forEach(chip => {
+    const zid = chip.getAttribute('data-zone-id');
+    chip.addEventListener('click', () => {
+      selectZone(zid, 0);
+    });
+  });
+
+  // Level Toggle Filter
+  levelButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const level = btn.getAttribute('data-level');
+      levelButtons.forEach(b => {
+        const match = b === btn;
+        b.classList.toggle('is-active', match);
+        b.setAttribute('aria-selected', match ? 'true' : 'false');
+      });
+
+      if (level === 'ground') {
+        if (mapGround) mapGround.classList.remove('is-dimmed');
+        if (mapUpper) mapUpper.classList.add('is-dimmed');
+        if (FLOORPLAN_ZONES[currentZoneId]?.level === 'upper') {
+          selectZone('suite-2', 0);
+        }
+      } else if (level === 'upper') {
+        if (mapGround) mapGround.classList.add('is-dimmed');
+        if (mapUpper) mapUpper.classList.remove('is-dimmed');
+        if (FLOORPLAN_ZONES[currentZoneId]?.level === 'ground') {
+          selectZone('suite-1', 0);
+        }
+      } else {
+        if (mapGround) mapGround.classList.remove('is-dimmed');
+        if (mapUpper) mapUpper.classList.remove('is-dimmed');
+      }
+    });
+  });
+
+  // Contextual Inquiry Deep-Link
+  if (inspectorInquireBtn) {
+    inspectorInquireBtn.addEventListener('click', (e) => {
+      const data = FLOORPLAN_ZONES[currentZoneId];
+      if (data && formNotes) {
+        formNotes.value = `Hi The Hiu team, I am particularly interested in staying with focus on: ${data.name} (${data.bed}). Please advise availability.`;
+        try {
+          formNotes.dispatchEvent(new Event('change', { bubbles: true }));
+        } catch (_) {}
+      }
+      const enquirySection = document.getElementById('enquiry');
+      if (enquirySection && enquirySection.scrollIntoView) {
+        e.preventDefault();
+        enquirySection.scrollIntoView({ behavior: motionQuery.matches ? 'auto' : 'smooth' });
+        if (formNotes && formNotes.focus) {
+          setTimeout(() => {
+            formNotes.focus();
+            formNotes.classList.add('form-highlight');
+            setTimeout(() => formNotes.classList.remove('form-highlight'), 1200);
+          }, 350);
+        }
+      }
+    });
+  }
+
+  // Scroll-Triggered First-Look Curiosity Teaser
+  const floorplanExplorer = document.getElementById('floorplan-explorer');
+  if (floorplanExplorer && typeof IntersectionObserver !== 'undefined' && !teaserDismissed) {
+    let teaserShown = false;
+    const teaserObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !teaserShown && !teaserDismissed) {
+          teaserShown = true;
+          // Pulse the primary suite
+          const primarySuite = document.querySelector('.floorplan-zone[data-zone-id="suite-1"]');
+          if (primarySuite) {
+            primarySuite.classList.add('ambient-teaser-pulse');
+            setTimeout(() => primarySuite.classList.remove('ambient-teaser-pulse'), 3000);
+          }
+          // Auto-dismiss teaser after 4.5 seconds if untouched
+          setTimeout(() => {
+            dismissTeaser();
+          }, 4500);
+        }
+      });
+    }, { threshold: 0.25 });
+    teaserObserver.observe(floorplanExplorer);
+  }
+
+  // Initialize with Suite 01 selected
+  selectZone('suite-1', 0);
+
 })();

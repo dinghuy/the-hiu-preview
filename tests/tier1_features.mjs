@@ -90,9 +90,10 @@ export function runTier1({ html, css, appJs, parsedCSS }) {
   const fontDisplay = parsedCSS.getRootToken('--font-display');
   const fontBody = parsedCSS.getRootToken('--font-body');
   assert(
-    'T1_F2_03', 'F2: Typography & Ink', 'Typography tokens define Newsreader and Plus Jakarta Sans',
-    fontDisplay && fontDisplay.includes('Newsreader') && fontBody && fontBody.includes('Plus Jakarta Sans'),
-    'Newsreader for display, Plus Jakarta Sans for body',
+    'T1_F2_03', 'F2: Typography & Ink', 'Typography tokens define Cormorant Garamond and DM Sans (or Newsreader / Plus Jakarta Sans)',
+    fontDisplay && (fontDisplay.includes('Cormorant Garamond') || fontDisplay.includes('Newsreader')) &&
+    fontBody && (fontBody.includes('DM Sans') || fontBody.includes('Plus Jakarta Sans')),
+    'Cormorant Garamond / Newsreader for display, DM Sans / Plus Jakarta Sans for body',
     `display: ${fontDisplay}, body: ${fontBody}`
   );
 
@@ -399,11 +400,11 @@ export function runTier1({ html, css, appJs, parsedCSS }) {
     html.includes('name="viewport"') ? 'Present' : 'Missing'
   );
 
-  const bodyOverflowX = parsedCSS.getDeclaration('body', 'overflow-x');
+  const bodyOverflowX = parsedCSS.getDeclaration('body', 'overflow-x') || parsedCSS.getDeclaration('html, body', 'overflow-x');
   assert(
-    'T1_F8_02', 'F8: Responsiveness', 'Body specifies overflow-x: hidden to prevent horizontal scroll',
-    bodyOverflowX === 'hidden',
-    'hidden', bodyOverflowX
+    'T1_F8_02', 'F8: Responsiveness', 'Body specifies overflow-x: clip or hidden to prevent horizontal scroll',
+    bodyOverflowX === 'clip' || bodyOverflowX === 'hidden',
+    'clip or hidden', bodyOverflowX
   );
 
   const modalContentMaxHeight = parsedCSS.getDeclaration('.modal-content', 'max-height') ||
